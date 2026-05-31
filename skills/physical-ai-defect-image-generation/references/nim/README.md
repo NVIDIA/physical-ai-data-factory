@@ -36,11 +36,10 @@ serving stack.
 
 ## Option B: Local Cluster Endpoint
 
-> **Prefer the `physical-ai-infrastructure-setup-and-resilient-scaling` skill to
+> **Require the `physical-ai-infrastructure-setup-and-resilient-scaling` skill to
 > stand up this endpoint.** Use it to (1) confirm the NIM Operator is installed
 > and that `nvidia/Qwen-Image-Edit-NVPCB-OVSL2SL` is a supported model, and
-> (2) deploy and manage the NIMService. Only fall back to the manual
-> `kubectl apply` below when the operator is already installed. **Never hand-roll
+> (2) deploy and manage the NIMService. **Never hand-roll
 > a plain `vllm serve` Deployment** — without the operator's PVC it caches model
 > weights to ephemeral storage and the pod is evicted (`ephemeral local storage
 > usage exceeds the total limit`).
