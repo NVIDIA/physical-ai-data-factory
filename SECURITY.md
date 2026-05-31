@@ -1,24 +1,41 @@
-## Security
+<!--
+SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+SPDX-License-Identifier: CC-BY-4.0 AND Apache-2.0
+-->
 
-NVIDIA is dedicated to the security and trust of our software products and services, including all source code repositories managed through our organization.
+# Security Policy
 
-If you need to report a security issue, please use the appropriate contact points outlined below. **Please do not report security vulnerabilities through GitHub.** If a potential security issue is inadvertently reported via a public issue or pull request, NVIDIA maintainers may limit public discussion and redirect the reporter to the appropriate private disclosure channels.
+## Reporting a Vulnerability
 
-## Reporting Potential Security Vulnerability in an NVIDIA Product
+NVIDIA is committed to addressing security issues in this project responsibly. If you believe you have found a security vulnerability in **Physical AI Data Factory** or in any skill published from this repository, please report it to the NVIDIA Product Security Incident Response Team (PSIRT) rather than opening a public issue or pull request.
 
-To report a potential security vulnerability in any NVIDIA product:
-- Web: [Security Vulnerability Submission Form](https://www.nvidia.com/object/submit-security-vulnerability.html)
-- E-Mail: psirt@nvidia.com
-    - We encourage you to use the following PGP key for secure email communication: [NVIDIA public PGP Key for communication](https://www.nvidia.com/en-us/security/pgp-key)
-    - Please include the following information:
-   	 - Product/Driver name and version/branch that contains the vulnerability
-     - Type of vulnerability (code execution, denial of service, buffer overflow, etc.)
-   	 - Instructions to reproduce the vulnerability
-   	 - Proof-of-concept or exploit code
-   	 - Potential impact of the vulnerability, including how an attacker could exploit the vulnerability
+- **Email:** [psirt@nvidia.com](mailto:psirt@nvidia.com)
+- **Web:** [https://www.nvidia.com/en-us/security/](https://www.nvidia.com/en-us/security/)
 
-While NVIDIA currently does not have a bug bounty program, we do offer acknowledgement when an externally reported security issue is addressed under our coordinated vulnerability disclosure policy. Please visit our [Product Security Incident Response Team (PSIRT)](https://www.nvidia.com/en-us/security/psirt-policies/) policies page for more information.
+When reporting, include enough detail for the team to reproduce and triage the issue:
 
-## NVIDIA Product Security
+- A description of the issue and its potential impact.
+- The skill, script, or file affected (path within this repo).
+- Steps to reproduce, expected behavior, and observed behavior.
+- Any proof-of-concept, logs, or screenshots that help diagnose the issue.
+- Your contact information for follow-up.
 
-For all security-related concerns, please visit NVIDIA's Product Security portal at https://www.nvidia.com/en-us/security
+PSIRT will acknowledge receipt and coordinate disclosure with the maintainers of this project. Please do **not** disclose the issue publicly until NVIDIA has had a reasonable opportunity to investigate and remediate.
+
+## Scope
+
+This policy covers:
+
+- The skills published under `skills/` in this repository.
+- The scripts and tooling under `scripts/`, `internal/`, and the workflow assets under `refs/`.
+- Documentation under `docs/` where security-relevant guidance is provided.
+
+It does not cover third-party software, container images, or services referenced by these skills. Vulnerabilities in those should be reported to their respective maintainers; please still notify PSIRT if the issue is exploitable through this project's skills.
+
+## Supported Versions
+
+Skills in this repository are versioned via the `metadata.version` field in each `SKILL.md` frontmatter. The current `main` branch is the only branch that receives security fixes. Older tagged releases are not patched in place; consumers should pull the latest published skill from the catalog.
+
+## Getting Help
+
+For non-security questions about contributing or using this project, see [CONTRIBUTING.md](CONTRIBUTING.md) and the per-skill `references/` directories.

@@ -1,154 +1,84 @@
-# __NVIDIA_OSS__ Standard Repo Template
+<!--
+SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+SPDX-License-Identifier: CC-BY-4.0 AND Apache-2.0
+-->
 
-This README file is from the NVIDIA_OSS standard repo template of [PLC-OSS-Template](https://github.com/NVIDIA-GitHub-Management/PLC-OSS-Template?tab=readme-ov-file). It provides a list of files in the PLC-OSS-Template and guidelines on how to use (clone and customize) them.
+# Physical AI Data Factory
 
-**Upon completing the customization for the project repo, the repo admin should replace this README template with the project specific README file.**
+Agent skills and workflow documentation for generating **labeled synthetic
+training data for physical-AI inspection and perception models** — without
+waiting for every real defect or rare event to appear in production.
 
-- Files (org-wide templates in the NVIDIA .github org repo; per-repo overrides allowed) in [PLC-OSS-Template](https://github.com/NVIDIA-GitHub-Management/PLC-OSS-Template?tab=readme-ov-file)
+This repository does not ship application code. It ships **agent skills**:
+prompt-driven orchestrators that an AI agent (Claude Code, Codex, OpenClaw/Claw,
+or any compatible agent) follows to run end-to-end synthetic data generation
+pipelines on [NVIDIA OSMO](https://developer.nvidia.com/osmo) from a
+provisioned GPU runtime environment.
 
-   - Root 
-     - README.md skeleton (CTA + Quickstart + Support/Security/Governance links) 
-     - LICENSE (Apache 2.0 by default)
-        - For other licenses, see the [Confluence page](https://confluence.nvidia.com/pages/viewpage.action?pageId=788418816) for other licenses
-        - CLA.md file (delete if not using MIT or BSD licenses)
-     - CODE_OF_CONDUCT.md 
-     - SECURITY.md (vuln reporting path) 
-     - CONTRIBUTING.md (base; repo can add specifics)
-     - SUPPORT.md (Support levels/channels)
-     - GOVERNANCE.md (baseline; repo may extend)
-     - CITATION.md (for projects that need citation)
+## What's inside
 
-   - .github/ 
-     - ISSUE_TEMPLATE/ (<https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository>)
-       - bug.yml, feature.yml, task.yml, config.yml 
-     - PULL_REQUEST_TEMPLATE.md (<https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository>)
-     - workflows/
-     - Note: workflow-templates/ for starter workflows should live in the org-level .github repo, not per-repo
+| Skill | What it does | Use cases |
+|-------|--------------|-----------|
+| **[Defect Image Generation (DIG)](skills/physical-ai-defect-image-generation/SKILL.md)** | Synthesizes labeled defect and clean images for Automated Optical Inspection (AOI) by chaining USD rendering (USD-to-ROI), Qwen Image-Edit appearance transfer, and Cosmos AnomalyGen — with optional finetuning. Day 0 (cold start from CAD/USD) and Day 1 (inference + labeling on real photos) paths. | PCBA, metal surface, glass |
+| **[Video Data Augmentation (VDA)](skills/physical-ai-video-data-augmentation/SKILL.md)** | Runs video augmentation and auto-labeling (pseudo-labeling) on OSMO using Cosmos, covering flow selection, preflight, submit-time interpolation, monitoring, and output retrieval. | Surveillance / event video |
 
-   - Repo-specific (not org-template, maintained by the team)
-     - CODEOWNERS (place at .github/CODEOWNERS or repo root)
-     - CHANGELOG.md (or RELEASE.md) 
-     - ROADMAP.md 
-     - MAINTAINERS.md 
-     - NOTICE or THIRD_PARTY_NOTICES / THIRD_PARTY_LICENSES (dependency specific)
-     - Build/package files (CMake, pyproject, Dockerfile, etc.)
+Each skill is self-contained under `skills/<name>/`, with its canonical OSMO
+workflow YAMLs in `assets/configs/`, use-case cookbooks in `assets/cookbooks/`,
+and long-form guidance in `references/`.
 
-   - Recommended structure and hygiene
-     - docs/
-     - examples/
-     - tests/
-     - scripts/
-     - Container/dev env: Dockerfile, docker/, .devcontainer/ (optional)
-     - Build/package (language-specific):
-       - Python: pyproject.toml, setup.cfg/setup.py, requirements.txt, environment.yml
-       - C++: CMakeLists.txt, cmake/, vcpkg.json
-     - Repo hygiene: .gitignore, .gitattributes, .editorconfig, .pre-commit-config.yaml, .clang-format
+## Repository layout
 
-
-## Usage of [PLC-OSS-Template](https://github.com/NVIDIA-GitHub-Management/PLC-OSS-Template?tab=readme-ov-file) for NEW NVIDIA OSS repos
-
-1. Clone the [PLC-OSS-Template](https://github.com/NVIDIA-GitHub-Management/PLC-OSS-Template?tab=readme-ov-file)
-2. Find/replace all in the clone of `___PROJECT___` and `__PROJECT_NAME__` with the name of the specific project.
-3. Inspect all files to make sure all replacements work and update text as needed
-
-
-**What you can reuse immediately**
-- CODE_OF_CONDUCT.md
-- SECURITY.md
-- CONTRIBUTING.md (base)
-- .github/ISSUE_TEMPLATE/.yml (bug/feature/task + config.yml)
-- .github/PULL_REQUEST_TEMPLATE.md
-- Reusable workflows 
-
-**What you must customize per repo**
-- README.md: copy the skeleton and fill in product-specific details (Quickstart, Requirements, Usage, Support level, links)
-- LICENSE: check file is correct, update year, consult Confluence for alternatives https://confluence.nvidia.com/pages/viewpage.action?pageId=788418816, add CLA.md only if your license/process requires it
-- CODEOWNERS: replace <TEAM> with your GitHub team handle(s). Place at .github/CODEOWNERS (or repo root)
-- MAINTAINERS.md: list maintainers names/roles, escalation path
-- CHANGELOG.md (or RELEASE.md): track releases/changes
-- SUPPORT.md: Update for your project
-- ROADMAP.md (optional): upcoming milestones
-- NOTICE / THIRD_PARTY_NOTICES (if you ship third‑party content)
-- Build/package files (CMake/pyproject/Dockerfile/etc.), tests/, docs/, examples/, scripts/ as appropriate
-- Workflows: Edit if you need custom behavior 
-
-
-4. Change git origin to point to new repo and push
-5. Remove the line break below and everything above it
-
-## Usage for existing NVIDIA OSS repos
-
-1. Follow the steps above, but add the files to your existing repo and merge
-
-<!-- REMOVE THE LINE BELOW AND EVERYTHING ABOVE -->
------------------------------------------
-# [Project Title]
-One-sentence value proposition for users. Who is it for, and why it matters. 
-
-# Overview
-What the project does? Why the project is useful?
-Provide a brief overview, highlighting key features or problem-solving capabilities.
-
-# Getting Started
-Guide users on how they can get started with the project. This should include basic installation step, quick-start examples 
-```bash
-# Option A: Package manager (pip/conda/npm/etc.)
-<copy-paste install>
-
-# Option B: Container
-docker run <image> <args>
-
-# Verify (hello world)
-<one-liner or ~10-line example>
+```text
+skills/        Agent skills (the product). Canonical source.
+docs/          Per-workflow environment guides and setup walkthroughs.
+.claude/ .codex/ .agents/   Agent-tool entry points (symlinked to skills/).
 ```
-# Requirements
-Include a list of pre-requisites. 
-- OS/Arch: <summary or link to full matrix>
-- Runtime/Compiler: <versions>
-- GPU/Drivers (if applicable): CUDA <ver>, driver <ver>, etc.
 
-# Usage
-```bash
-# Minimal runnable snippet (≤20 lines)
-<code>
-```
-- More examples/tutorials: <link>
-- API reference: <link>
+The `.claude/skills`, `.codex/skills`, and `.agents/skills` directories are
+symlinks to `skills/`, so the same canonical skill is discovered automatically
+by each agent runtime.
 
-# Performance (Optional)
-Summary of benchmarks; link to detailed results and hardware used.
+## Getting started
 
-## Releases & Roadmap 
-- Releases/Changelog: <link>
-- (Optional) Next milestones or link to `ROADMAP.md`.
-  
-# Contribution Guidelines
-- Start here: `CONTRIBUTING.md`
-- Code of Conduct: `CODE_OF_CONDUCT.md`
-- Development quickstart (build/test):
-```bash
-<clone> && <deps> && <build/test>
-```
-## Governance & Maintainers
-- Governance: `GOVERNANCE.md`
-- Maintainers: <team/handles>
-- Labeling/triage policy: <link>
+The fastest path is to provision a GPU runtime environment, pull sample assets,
+and open an agent (Claw or your preferred coding agent) that drives the workflow
+for you:
+
+- **Defect Image Generation** — see
+  [docs/workflows/physical-ai-defect-image-generation/launchable.md](docs/workflows/physical-ai-defect-image-generation/launchable.md)
+- **Video Data Augmentation** — see
+  [docs/workflows/physical-ai-video-data-augmentation/launchable.md](docs/workflows/physical-ai-video-data-augmentation/launchable.md)
+
+To use a skill directly with your own agent, point the agent at the relevant
+`skills/<name>/SKILL.md` and follow its prompts. The skill handles flow
+selection, preconditions, data handoffs, and OSMO submit/monitor commands.
+
+### Prerequisites
+
+Workflows run on OSMO and pull gated assets, so you'll generally need:
+
+- **NGC credentials** to pull container images from `nvcr.io`.
+- **A Hugging Face read token** for gated Cosmos / AnomalyGen / Qwen-Image-Edit
+  models and datasets (accept each model's license first).
+- **OSMO CLI access** with a logged-in profile and an available GPU pool.
+
+The exact secrets, model/dataset links, and resource sizing are listed in each
+workflow's environment guide.
+
+## Contributing
+
+This project is currently **not accepting external contributions**. The
+repository is published as-is for reference and reproducibility; issues and
+pull requests from community members will not be reviewed or merged at this
+time. If contributions reopen, all commits must be signed off per the Developer
+Certificate of Origin — see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Security
-- Vulnerability disclosure: `SECURITY.md`
-- Do not file public issues for security reports.
 
-## Support
-- Level: <Experimental | Maintained | Stable>
-- How to get help: Issues/Discussions/<channel link>
-- Response expectations (if any).
+To report a vulnerability, contact the NVIDIA PSIRT rather than opening a public
+issue. See [SECURITY.md](SECURITY.md).
 
-# Community
-Provide the channel for community communications.
+## License
 
-# References
-Provide a list of related references
-
-# License
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
-- License: <link>
+Code is licensed under **Apache-2.0** and documentation/skill content under
+**CC-BY-4.0** (`CC-BY-4.0 AND Apache-2.0`). See [LICENSE](LICENSE).
