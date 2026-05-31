@@ -55,10 +55,10 @@ Task composition is derived from the evaluation dataset when possible. Entries w
 | Dimension | Num | `claude-code` | `codex` |
 |---|---:|---:|---:|
 | Security | 8 | 100% (+0%) | 100% (+0%) |
-| Correctness | 8 | 92% (+15%) | 79% (-3%) |
-| Discoverability | 8 | 86% (+21%) | 65% (+1%) |
-| Effectiveness | 8 | 69% (+5%) | 60% (-3%) |
-| Efficiency | 8 | 69% (+18%) | 45% (+3%) |
+| Correctness | 8 | 90% (+10%) | 75% (+2%) |
+| Discoverability | 8 | 87% (+24%) | 65% (-2%) |
+| Effectiveness | 8 | 69% (-0%) | 53% (+0%) |
+| Efficiency | 8 | 71% (+20%) | 48% (+2%) |
 
 Score values show skill-assisted performance. Values in parentheses show uplift versus the no-skill baseline when baseline data is available.
 
@@ -68,11 +68,11 @@ Tier 1 validation passed with observations. NVSkills-Eval ran 9 checks and found
 
 Top findings:
 
+- MEDIUM PII/phone_numbers: US phone number pattern (`assets/configs/texture_defect_generation_day0.yaml:896`)
 - MEDIUM PII/phone_numbers: US phone number pattern (`assets/configs/good_image_generation.yaml:379`)
-- MEDIUM PII/phone_numbers: US phone number pattern (`assets/configs/texture_defect_generation_day1_real_alignment.yaml:881`)
 - MEDIUM PII/phone_numbers: US phone number pattern (`assets/configs/structural_defect_generation.yaml:370`)
 - MEDIUM PII/phone_numbers: US phone number pattern (`assets/configs/structural_defect_generation.yaml:380`)
-- MEDIUM PII/phone_numbers: US phone number pattern (`assets/configs/texture_defect_generation_day0.yaml:896`)
+- MEDIUM PII/phone_numbers: US phone number pattern (`assets/configs/texture_defect_generation_day1_real_alignment.yaml:881`)
 
 ## Tier 2: Deduplication Summary
 

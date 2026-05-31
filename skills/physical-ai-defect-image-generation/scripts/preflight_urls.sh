@@ -88,7 +88,7 @@ for url in "${required[@]}"; do
   : > "$stdout"
   : > "$stderr"
   if osmo data list --no-pager "$url" >"$stdout" 2>"$stderr"; then
-    if [[ -s "$stdout" ]] && ! grep -Eiq 'no (files|objects)|not found|does not exist|not exist' "$stdout" "$stderr"; then
+    if [[ -s "$stdout" ]] && ! grep -Eiq 'no (files|objects|entries)|not found|does not exist|not exist|total 0' "$stdout" "$stderr"; then
       echo "OK: $url"
       continue
     fi

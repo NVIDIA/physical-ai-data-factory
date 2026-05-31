@@ -9,7 +9,7 @@ NVIDIA <br>
 ### License/Terms of Use: <br>
 CC-BY-4.0 AND Apache-2.0 <br>
 ## Use Case: <br>
-Developers and engineers use this skill to orchestrate synthetic defect image generation pipelines — including USD rendering, Qwen Image-Edit appearance transfer, and Cosmos AnomalyGen labeling — for Automated Optical Inspection (AOI) training datasets. <br>
+Developers and engineers generating labeled synthetic defect and clean images for automated optical inspection (AOI) model training using NVIDIA OSMO pipelines. <br>
 
 ### Deployment Geography for Use: <br>
 Global <br>
@@ -21,14 +21,14 @@ Mitigation: Review and scan skill before deployment. <br>
 ## Reference(s): <br>
 - [NVIDIA OSMO](https://developer.nvidia.com/osmo) <br>
 - [Skill Definition (SKILL.md)](SKILL.md) <br>
-- [Container Images](references/container-images.md) <br>
-- [GPU Sizing](references/gpu_sizing.md) <br>
+- [Preconditions](references/preconditions.md) <br>
 - [Knob Mapping](references/knob_mapping.md) <br>
+- [GPU Sizing](references/gpu_sizing.md) <br>
 - [Troubleshooting](references/troubleshooting.md) <br>
 
 
 ## Skill Output: <br>
-**Output Type(s):** [Shell commands, Configuration instructions, Analysis] <br>
+**Output Type(s):** [Shell commands, Configuration instructions] <br>
 **Output Format:** [Markdown with inline bash code blocks] <br>
 **Output Parameters:** [1D] <br>
 **Other Properties Related to Output:** [None] <br>
@@ -40,7 +40,7 @@ Mitigation: Review and scan skill before deployment. <br>
 
 
 ## Evaluation Tasks: <br>
-Evaluated against 6 internal evaluation tasks (positive skill-activation cases), 2 attempts per task, 50% pass threshold. NVSkills-Eval profile: external. <br>
+Evaluated against 6 internal skill-activation tasks, 2 attempts per task, 50% pass threshold. NVSkills-Eval profile: external. <br>
 
 ## Evaluation Metrics Used: <br>
 Reported benchmark dimensions: <br>
@@ -65,10 +65,10 @@ Underlying evaluation signals used in this run: <br>
 | Dimension | Num | `claude-code` | `codex` |
 |---|---:|---:|---:|
 | Security | 8 | 100% (+0%) | 100% (+0%) |
-| Correctness | 8 | 92% (+15%) | 79% (-3%) |
-| Discoverability | 8 | 86% (+21%) | 65% (+1%) |
-| Effectiveness | 8 | 69% (+5%) | 60% (-3%) |
-| Efficiency | 8 | 69% (+18%) | 45% (+3%) |
+| Correctness | 8 | 90% (+10%) | 75% (+2%) |
+| Discoverability | 8 | 87% (+24%) | 65% (-2%) |
+| Effectiveness | 8 | 69% (-0%) | 53% (+0%) |
+| Efficiency | 8 | 71% (+20%) | 48% (+2%) |
 
 ## Skill Version(s): <br>
 1.0.0 (source: frontmatter) <br>
