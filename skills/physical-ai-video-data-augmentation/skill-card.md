@@ -24,9 +24,10 @@ Mitigation: Review and scan skill before deployment. <br>
 - [Flow: Auto-Labeling](references/flows/auto_labeling.md) <br>
 - [Flow: E2E](references/flows/e2e.md) <br>
 - [Flow: E2E Super Resolution](references/flows/e2e_super_resolution.md) <br>
-- [NIM Endpoint Reference](references/nim/README.md) <br>
 - [Setup Guide](references/setup.md) <br>
 - [Troubleshooting](references/troubleshooting.md) <br>
+- [NIM Endpoint Reference](references/nim/README.md) <br>
+- [Container Images](references/container-images.md) <br>
 
 
 ## Skill Output: <br>
@@ -42,7 +43,7 @@ Mitigation: Review and scan skill before deployment. <br>
 
 
 ## Evaluation Tasks: <br>
-Evaluated against 17 tasks (13 positive skill-activation, 4 negative) with 2 attempts per task and a 50% pass threshold. <br>
+Evaluated against 17 internal evaluation tasks (13 positive skill-activation, 4 negative) with 2 attempts per task and a 50% pass threshold. <br>
 
 ## Evaluation Metrics Used: <br>
 Reported benchmark dimensions: <br>
@@ -66,11 +67,11 @@ Underlying evaluation signals used in this run: <br>
 ## Evaluation Results: <br>
 | Dimension | Num | `claude-code` | `codex` |
 |---|---:|---:|---:|
-| Security | 8 | 100% (+0%) | 91% (-3%) |
-| Correctness | 8 | 79% (-3%) | 81% (+5%) |
-| Discoverability | 8 | 73% (+5%) | 67% (-1%) |
-| Effectiveness | 8 | 72% (-6%) | 76% (+6%) |
-| Efficiency | 8 | 67% (+5%) | 58% (-3%) |
+| Security | 8 | 100% (+0%) | 91% (+0%) |
+| Correctness | 8 | 81% (+0%) | 77% (-3%) |
+| Discoverability | 8 | 73% (+6%) | 68% (-3%) |
+| Effectiveness | 8 | 72% (-3%) | 70% (-4%) |
+| Efficiency | 8 | 68% (+6%) | 60% (-5%) |
 
 ## Skill Version(s): <br>
 1.0.0 (source: frontmatter) <br>
