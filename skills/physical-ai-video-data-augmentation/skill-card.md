@@ -9,7 +9,7 @@ NVIDIA <br>
 ### License/Terms of Use: <br>
 CC-BY-4.0 AND Apache-2.0 <br>
 ## Use Case: <br>
-Developers and engineers use this skill to orchestrate end-to-end video data augmentation and auto-labeling pipelines on NVIDIA OSMO, generating labeled synthetic training data for physical-AI perception models. <br>
+Developers and engineers use this skill to orchestrate end-to-end video data augmentation and auto-labeling pipelines on NVIDIA OSMO for generating labeled synthetic training data for physical-AI perception models. <br>
 
 ### Deployment Geography for Use: <br>
 Global <br>
@@ -22,16 +22,15 @@ Mitigation: Review and scan skill before deployment. <br>
 - [NVIDIA OSMO](https://developer.nvidia.com/osmo) <br>
 - [Flow: Augmentation and Auto-Labeling](references/flows/augmentation_and_al.md) <br>
 - [Flow: Auto-Labeling](references/flows/auto_labeling.md) <br>
-- [Flow: E2E](references/flows/e2e.md) <br>
-- [Flow: E2E Super Resolution](references/flows/e2e_super_resolution.md) <br>
+- [Flow: End-to-End](references/flows/e2e.md) <br>
+- [Flow: End-to-End Super Resolution](references/flows/e2e_super_resolution.md) <br>
+- [NIM Endpoint Reference](references/nim/README.md) <br>
 - [Setup Guide](references/setup.md) <br>
 - [Troubleshooting](references/troubleshooting.md) <br>
-- [NIM Endpoint Reference](references/nim/README.md) <br>
-- [Container Images](references/container-images.md) <br>
 
 
 ## Skill Output: <br>
-**Output Type(s):** [Shell commands, Configuration instructions, Files] <br>
+**Output Type(s):** [Shell commands, Configuration instructions, Analysis] <br>
 **Output Format:** [Markdown with inline bash code blocks] <br>
 **Output Parameters:** [1D] <br>
 **Other Properties Related to Output:** [None] <br>
@@ -43,7 +42,7 @@ Mitigation: Review and scan skill before deployment. <br>
 
 
 ## Evaluation Tasks: <br>
-Evaluated against 17 internal evaluation tasks (13 positive skill-activation, 4 negative) with 2 attempts per task and a 50% pass threshold. <br>
+Evaluated against 17 tasks (13 positive, 4 negative) using 2 attempts per task with a 50% pass threshold. <br>
 
 ## Evaluation Metrics Used: <br>
 Reported benchmark dimensions: <br>
@@ -67,11 +66,11 @@ Underlying evaluation signals used in this run: <br>
 ## Evaluation Results: <br>
 | Dimension | Num | `claude-code` | `codex` |
 |---|---:|---:|---:|
-| Security | 8 | 100% (+0%) | 91% (+0%) |
-| Correctness | 8 | 81% (+0%) | 77% (-3%) |
-| Discoverability | 8 | 73% (+6%) | 68% (-3%) |
-| Effectiveness | 8 | 72% (-3%) | 70% (-4%) |
-| Efficiency | 8 | 68% (+6%) | 60% (-5%) |
+| Security | 8 | 100% (+6%) | 93% (+1%) |
+| Correctness | 8 | 80% (+2%) | 80% (+2%) |
+| Discoverability | 8 | 73% (+4%) | 68% (+1%) |
+| Effectiveness | 8 | 74% (-1%) | 76% (+2%) |
+| Efficiency | 8 | 69% (+5%) | 60% (+1%) |
 
 ## Skill Version(s): <br>
 1.0.0 (source: frontmatter) <br>
