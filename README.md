@@ -50,7 +50,7 @@ for you:
 - **Video Data Augmentation** — see
   [docs/workflows/physical-ai-video-data-augmentation/launchable.md](docs/workflows/physical-ai-video-data-augmentation/launchable.md)
 - **People Attribute Search** — see
-  [skills/physical-ai-people-attribute-search/SKILL.md](skills/physical-ai-people-attribute-search/SKILL.md)
+  [docs/workflows/physical-ai-people-attribute-search/launchable.md](docs/workflows/physical-ai-people-attribute-search/launchable.md)
 
 To use a skill directly with your own agent, point the agent at the relevant
 `skills/<name>/SKILL.md` and follow its prompts. The skill handles flow
