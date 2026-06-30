@@ -49,7 +49,7 @@ image-edit augmentation with MCQ verification, a VLM (`qwen3-vl`) for
 verification and person-attribute captioning, and an LLM (`qwen25-14b`) for MCQ
 question generation.
 
-![PAS Pipeline Overview](./media/archi.png)
+![PAS Pipeline Overview](./media/arch.png)
 
 The workflow can run in three modes:
 
