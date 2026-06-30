@@ -21,6 +21,7 @@ provisioned GPU runtime environment.
 |-------|--------------|-----------|
 | **[Defect Image Generation (DIG)](skills/physical-ai-defect-image-generation/SKILL.md)** | Synthesizes labeled defect and clean images for Automated Optical Inspection (AOI) by chaining USD rendering (USD-to-ROI), Qwen Image-Edit appearance transfer, and Cosmos AnomalyGen — with optional finetuning. Day 0 (cold start from CAD/USD) and Day 1 (inference + labeling on real photos) paths. | PCBA, metal surface, glass |
 | **[Video Data Augmentation (VDA)](skills/physical-ai-video-data-augmentation/SKILL.md)** | Runs video augmentation and auto-labeling (pseudo-labeling) on OSMO using Cosmos, covering flow selection, preflight, submit-time interpolation, monitoring, and output retrieval. | Video analytics / event video |
+| **[People Attribute Search (PAS)](skills/physical-ai-people-attribute-search/SKILL.md)** | Augments person-crop datasets with controlled clothing/appearance variations and synonymous attribute captions, then auto-labels them — chaining Qwen Image-Edit (image augmentation with MCQ verification), a Qwen VLM, and a Qwen LLM, all served in-cluster on OSMO. | Person re-identification / attribute search |
 
 Each skill is self-contained under `skills/<name>/`, with its canonical OSMO
 workflow YAMLs in `assets/configs/`, use-case cookbooks in `assets/cookbooks/`,
