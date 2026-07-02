@@ -38,6 +38,11 @@ Before running any workflow, open Claw or your preferred coding agent in the dep
 
 Complete onboarding before you ask Claw or your coding agent to run setup or submit workflows.
 
+> **Model safety disclaimer (Qwen-Image-Edit and other models).** Users are
+> responsible for model inputs and outputs. Users are responsible for ensuring
+> safe integration of this model, including implementing guardrails as well as
+> other safety mechanisms, prior to deployment.
+
 ## What This Workflow Does
 
 The environment orchestrates OSMO workflows that implement a GPU-accelerated,

@@ -93,3 +93,9 @@ Hosted equivalents on build.nvidia.com:
 - https://build.nvidia.com/qwen/qwen-image-edit
 - https://build.nvidia.com/qwen/qwen3-vl-30b-a3b-instruct
 - https://build.nvidia.com/qwen/qwen2.5-14b-instruct
+
+## Model safety disclaimer
+
+Users are responsible for model inputs and outputs. Users are responsible for
+ensuring safe integration of this model, including implementing guardrails as
+well as other safety mechanisms, prior to deployment.
