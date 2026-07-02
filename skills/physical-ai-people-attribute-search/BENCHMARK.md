@@ -7,7 +7,7 @@ This benchmark summarizes 3-Tier Evaluation from NVSkills-Eval results for the s
 ## Evaluation Summary
 
 - Skill: `physical-ai-people-attribute-search`
-- Evaluation date: 2026-06-24
+- Evaluation date: 2026-07-02
 - NVSkills-Eval profile: `external`
 - Environment: `astra-sandbox`
 - Dataset: 10 evaluation tasks
@@ -54,11 +54,11 @@ Task composition is derived from the evaluation dataset when possible. Entries w
 
 | Dimension | Num | `claude-code` | `codex` |
 |---|---:|---:|---:|
-| Security | 8 | 100% (+0%) | 100% (+25%) |
-| Correctness | 8 | 82% (+44%) | 85% (+40%) |
-| Discoverability | 8 | 93% (+51%) | 73% (+18%) |
-| Effectiveness | 8 | 68% (+37%) | 86% (+49%) |
-| Efficiency | 8 | 85% (+41%) | 66% (+12%) |
+| Security | 8 | 100% (+0%) | 100% (+0%) |
+| Correctness | 8 | 84% (+3%) | 89% (+3%) |
+| Discoverability | 8 | 85% (-1%) | 82% (+0%) |
+| Effectiveness | 8 | 85% (+4%) | 95% (+2%) |
+| Efficiency | 8 | 78% (+0%) | 76% (+1%) |
 
 Score values show skill-assisted performance. Values in parentheses show uplift versus the no-skill baseline when baseline data is available.
 

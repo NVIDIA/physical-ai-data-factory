@@ -9,10 +9,16 @@ NVIDIA <br>
 ### License/Terms of Use: <br>
 CC-BY-4.0 AND Apache-2.0 <br>
 ## Use Case: <br>
-Developers and engineers use this skill to run people attribute search (PAS) image augmentation and auto-labeling pipelines on NVIDIA OSMO, generating controlled clothing and appearance variations and person-attribute captions for person-crop datasets. <br>
+Developers and engineers use this skill to run PAS image augmentation and auto-labeling pipelines on NVIDIA OSMO, generating controlled clothing and appearance variations and person-attribute captions for physical-AI perception models. <br>
 
 ### Deployment Geography for Use: <br>
 Global <br>
+
+## Requirements / Dependencies: <br>
+**Requires API Key or External Credential:** [Yes] <br>
+**Credential Type(s):** [API key] <br>
+
+Do not include secrets in prompts/logs/output; use least-privilege credentials; rotate keys as appropriate. <br>
 
 ## Known Risks and Mitigations: <br>
 Risk: Review before execution as proposals could introduce incorrect or misleading guidance into skills. <br>
@@ -20,18 +26,17 @@ Mitigation: Review and scan skill before deployment. <br>
 
 ## Reference(s): <br>
 - [NVIDIA OSMO](https://developer.nvidia.com/osmo) <br>
+- [End-to-End Flow](references/flows/e2e.md) <br>
+- [Augmentation Flow](references/flows/augmentation.md) <br>
+- [Auto Labeling Flow](references/flows/auto_labeling.md) <br>
+- [NIM Deployment](references/nim/README.md) <br>
 - [Setup Guide](references/setup.md) <br>
 - [Troubleshooting](references/troubleshooting.md) <br>
 - [Container Images](references/container-images.md) <br>
-- [NIM Configuration](references/nim/README.md) <br>
-- [E2E Flow Reference](references/flows/e2e.md) <br>
-- [Augmentation Flow Reference](references/flows/augmentation.md) <br>
-- [Auto-Labeling Flow Reference](references/flows/auto_labeling.md) <br>
-- [Default Cookbook](assets/cookbooks/default/README.md) <br>
 
 
 ## Skill Output: <br>
-**Output Type(s):** [Shell commands, Configuration instructions, Files] <br>
+**Output Type(s):** [Shell commands, Configuration instructions, Analysis] <br>
 **Output Format:** [Markdown with inline bash code blocks] <br>
 **Output Parameters:** [1D] <br>
 **Other Properties Related to Output:** [None] <br>
@@ -43,7 +48,7 @@ Mitigation: Review and scan skill before deployment. <br>
 
 
 ## Evaluation Tasks: <br>
-Evaluated against 10 tasks (7 positive skill-activation, 3 negative) via NVSkills-Eval with profile `external` in `astra-sandbox` environment. <br>
+Evaluated against 10 evaluation tasks (7 positive, 3 negative) in the astra-sandbox environment using the external NVSkills-Eval profile. <br>
 
 ## Evaluation Metrics Used: <br>
 Reported benchmark dimensions: <br>
@@ -67,11 +72,11 @@ Underlying evaluation signals used in this run: <br>
 ## Evaluation Results: <br>
 | Dimension | Num | `claude-code` | `codex` |
 |---|---:|---:|---:|
-| Security | 8 | 100% (+0%) | 100% (+25%) |
-| Correctness | 8 | 82% (+44%) | 85% (+40%) |
-| Discoverability | 8 | 93% (+51%) | 73% (+18%) |
-| Effectiveness | 8 | 68% (+37%) | 86% (+49%) |
-| Efficiency | 8 | 85% (+41%) | 66% (+12%) |
+| Security | 8 | 100% (+0%) | 100% (+0%) |
+| Correctness | 8 | 84% (+3%) | 89% (+3%) |
+| Discoverability | 8 | 85% (-1%) | 82% (+0%) |
+| Effectiveness | 8 | 85% (+4%) | 95% (+2%) |
+| Efficiency | 8 | 78% (+0%) | 76% (+1%) |
 
 ## Skill Version(s): <br>
 1.0.0 (source: frontmatter) <br>
