@@ -49,7 +49,8 @@ for you:
   [docs/workflows/physical-ai-defect-image-generation/launchable.md](docs/workflows/physical-ai-defect-image-generation/launchable.md)
 - **Video Data Augmentation** — see
   [docs/workflows/physical-ai-video-data-augmentation/launchable.md](docs/workflows/physical-ai-video-data-augmentation/launchable.md)
-- **People Attribute Search** 
+- **People Attribute Search** — see
+  docs/workflows/physical-ai-people-attribute-search/launchable.md
 
 To use a skill directly with your own agent, point the agent at the relevant
 `skills/<name>/SKILL.md` and follow its prompts. The skill handles flow
