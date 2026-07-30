@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
-# PAS auto-labeling worker: generate person-attribute captions and synonymous
+# Image Attribute Augmentation auto-labeling worker: generate person-attribute captions and synonymous
 # search queries for each augmented image using the shipped person_attributes
 # question bank inside the paidf-auto-labeling container.
 

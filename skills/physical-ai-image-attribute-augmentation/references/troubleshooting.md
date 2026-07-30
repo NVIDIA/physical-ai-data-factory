@@ -1,4 +1,4 @@
-# PAS Troubleshooting
+# Image Attribute Augmentation Troubleshooting
 
 ## Common Issues
 
@@ -24,7 +24,7 @@
 
 **Resolution**:
 1. The image-edit endpoint must be **OpenAI-compatible** (expose
-   `/v1/chat/completions` and `/v1/models`). The PAS augmentation worker calls
+   `/v1/chat/completions` and `/v1/models`). The Image Attribute Augmentation augmentation worker calls
    the image-edit model via `client.chat.completions.create(...)` and reads the
    edited image from `choices[0].message.content[0].image_url.url`.
 2. Do **not** use the Triton-based NVIDIA NIM

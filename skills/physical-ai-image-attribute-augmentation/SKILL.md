@@ -1,10 +1,10 @@
 ---
-name: physical-ai-people-attribute-search
+name: physical-ai-image-attribute-augmentation
 description: >-
-  Use when running people attribute search (PAS) image augmentation and
+  Use when running image attribute augmentation and
   auto-labeling workflows on OSMO: flow selection, preflight, submit-time
   interpolation, monitoring, and output retrieval. Trigger keywords: people
-  attribute search, PAS, person augmentation, attribute search, person
+  attribute search, Image Attribute Augmentation, person augmentation, attribute search, person
   re-identification, clothing augmentation, person crop augmentation.
 license: CC-BY-4.0 AND Apache-2.0
 metadata:
@@ -15,23 +15,23 @@ metadata:
   author: NVIDIA
   tags:
     - physical-ai
-    - people-attribute-search
+    - image-attribute-augmentation
     - person-augmentation
     - auto-labeling
     - image-edit
 ---
 
-# Physical AI People Attribute Search Workflow Orchestrator
+# Physical AI Image Attribute Augmentation Workflow Orchestrator
 
-Default workflow skill for PAS execution on OSMO. It owns flow selection,
+Default workflow skill for Image Attribute Augmentation execution on OSMO. It owns flow selection,
 preflight, submit-time interpolation, monitoring, and output retrieval.
 
 ## Purpose
 
-Run the PAS image augmentation and auto-labeling pipeline safely and
+Run the Image Attribute Augmentation and auto-labeling pipeline safely and
 reproducibly from preflight to output download.
 
-The PAS pipeline augments existing person-crop datasets by generating
+The Image Attribute Augmentation pipeline augments existing person-crop datasets by generating
 controlled clothing/appearance variations (image-domain) and synonymous
 attribute captions (text-domain). It uses the `paidf-augmentation` container
 for image-edit augmentation with MCQ verification, and the
@@ -46,7 +46,7 @@ surface as `USER_INPUT_REQUIRED:` from `scripts/preflight_credentials.sh`.
 
 | Requirement | How it is satisfied | Used for |
 |---|---|---|
-| NGC API key (optional) | `NGC_API_KEY`, `NGC_CLI_API_KEY`, or compatible `nvapi-*` token | Optional for `nvcr_io` credential refresh; default PAS image refs are public |
+| NGC API key (optional) | `NGC_API_KEY`, `NGC_CLI_API_KEY`, or compatible `nvapi-*` token | Optional for `nvcr_io` credential refresh; default Image Attribute Augmentation image refs are public |
 | Hugging Face token | `HF_TOKEN` (or `HUGGING_FACE_HUB_TOKEN`), or a cached token at `~/.cache/huggingface/token` | Creates the OSMO `hf_token` credential |
 | OSMO CLI access | `osmo` on `PATH`, logged in, with a default profile and a registered DATA credential profile matching `storage_url` | Submitting/monitoring workflows and listing/downloading objects |
 | GPU pool | At least one `ONLINE` pool in `osmo pool list --mode free` | Scheduling setup + worker tasks |
@@ -93,7 +93,7 @@ Use script-level `--help` for exact arguments.
 
 | User intent | Workflow |
 |---|---|
-| "Augment person crops and generate captions" / "full PAS pipeline" | `e2e` |
+| "Augment person crops and generate captions" / "full Image Attribute Augmentation pipeline" | `e2e` |
 | "Generate clothing variations" / "augment only" / "image edit" | `augmentation` |
 | "Caption augmented images" / "generate search queries" / "label only" | `auto_labeling` |
 
@@ -121,10 +121,10 @@ Default to autonomy: ask only when missing information blocks execution.
 
 ### Input data policy
 
-- PAS requires person-crop images organized as `<person_id>/<view>.jpg` subdirectories.
+- Image Attribute Augmentation requires person-crop images organized as `<person_id>/<view>.jpg` subdirectories.
 - Always preserve user-provided dataset inputs as first-class.
 - Never replace an explicit user dataset with demo assets.
-- If no dataset is provided, ask for one (PAS has no built-in demo dataset).
+- If no dataset is provided, ask for one (Image Attribute Augmentation has no built-in demo dataset).
 
 Collect only missing values:
 
@@ -183,7 +183,7 @@ Workflow runtime (depends on dataset size and endpoint latency):
    - If missing/unhealthy, deploy automatically — this is a prerequisite, not a
      user decision. Do NOT pause to ask. See `references/nim/README.md` for the
      image-edit NIMService manifest and the VLM/LLM NIM operator install.
-   - PAS does NOT launch inference servers inside the OSMO workflow; workers
+   - Image Attribute Augmentation does NOT launch inference servers inside the OSMO workflow; workers
      consume the `image_edit_url` / `vlm_url` / `llm_url` endpoints.
    - External endpoints are opt-in only (explicit request or explicit URLs);
      only then override the `*_url` values at submit.
@@ -194,7 +194,7 @@ Workflow runtime (depends on dataset size and endpoint latency):
 Every flow uses the same submit shape; only the workflow YAML changes.
 
 ```bash
-SKILLS_DIR="$(cd "$(git rev-parse --show-toplevel)/skills/physical-ai-people-attribute-search" && pwd)"
+SKILLS_DIR="$(cd "$(git rev-parse --show-toplevel)/skills/physical-ai-image-attribute-augmentation" && pwd)"
 STAMP=$(cat /proc/sys/kernel/random/uuid | cut -c1-8)
 osmo workflow submit assets/configs/osmo/<flow>.yaml \
   --pool <pool> \

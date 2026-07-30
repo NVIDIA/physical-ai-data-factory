@@ -1,4 +1,4 @@
-# Physical AI People Attribute Search
+# Physical AI Image Attribute Augmentation
 
 Provision an environment with the following resource requirements:
 
@@ -10,13 +10,13 @@ Provision an environment with the following resource requirements:
 > side by side). The recommended AWS + 4 x GPU launchable setting leaves
 > headroom for scheduling.
 
-This guide describes a ready environment for running people attribute search
-(PAS) image augmentation and auto-labeling workflows on NVIDIA OSMO. It is
+This guide describes a ready environment for running image attribute augmentation
+ image augmentation and auto-labeling workflows on NVIDIA OSMO. It is
 designed for teams that want to expand person-crop datasets with controlled
 clothing/appearance variations plus structured attribute labels and search
 queries, without wiring the full stack manually.
 
-The workflow is driven through the in-repo skill under `skills/physical-ai-people-attribute-search/` and supports both quick demo runs and production runs against your own datasets.
+The workflow is driven through the in-repo skill under `skills/physical-ai-image-attribute-augmentation/` and supports both quick demo runs and production runs against your own datasets.
 
 ## Before You Run
 
@@ -27,14 +27,14 @@ Before running any workflow, open Claw or your preferred coding agent in the dep
   - Alternatively, use NVIDIA Inference endpoints by creating/managing a key at https://inference.nvidia.com/key-management.
   - You can switch models from the agent UI at any time, or optionally supply an Anthropic/Claude key to use third-party providers.
 
-- **Hugging Face read token** — required for gated model downloads. Accept model terms for all three Qwen models PAS uses:
+- **Hugging Face read token** — required for gated model downloads. Accept model terms for all three Qwen models Image Attribute Augmentation uses:
     - [Qwen-Image-Edit-2511](https://huggingface.co/Qwen/Qwen-Image-Edit-2511)
     - [Qwen3-VL-30B-A3B-Instruct](https://huggingface.co/Qwen/Qwen3-VL-30B-A3B-Instruct)
     - [Qwen2.5-14B-Instruct](https://huggingface.co/Qwen/Qwen2.5-14B-Instruct)
   - Create a read token:
     - [Hugging Face token page](https://huggingface.co/settings/tokens/new?tokenType=read)
 
-- **NGC credentials (optional)** — optional for this environment's default PAS workflow path; default PAS image references are public. Provide an `nvapi-*` token only if you need an `nvcr_io` credential refresh.
+- **NGC credentials (optional)** — optional for this environment's default Image Attribute Augmentation workflow path; default Image Attribute Augmentation image references are public. Provide an `nvapi-*` token only if you need an `nvcr_io` credential refresh.
 
 Complete onboarding before you ask Claw or your coding agent to run setup or submit workflows.
 
@@ -54,7 +54,7 @@ image-edit augmentation with MCQ verification, a VLM (`qwen3-vl`) for
 verification and person-attribute captioning, and an LLM (`qwen25-14b`) for MCQ
 question generation.
 
-![PAS Pipeline Overview](./media/arch.png)
+![Image Attribute Augmentation Pipeline Overview](./media/arch.png)
 
 The workflow can run in three modes:
 
@@ -96,7 +96,7 @@ These are written to `dataset/augmented_data.json` as structured attributes alon
 ## First-Time Setup
 
 Before the first workflow run, copy the person-crop dataset you want to process
-to a location accessible from the target environment. PAS ships **no built-in
+to a location accessible from the target environment. Image Attribute Augmentation ships **no built-in
 demo dataset** — you must supply person crops (see [Sample Data](#sample-data)).
 
 The agent will:
@@ -126,7 +126,7 @@ You can run from any of the following:
 - Your own dataset URL in object storage (`s3://`, `swift://`, and so on), or
 - A local folder uploaded during the run.
 
-PAS requires person-crop images organized as `<person_id>/<view>.jpg`
+Image Attribute Augmentation requires person-crop images organized as `<person_id>/<view>.jpg`
 subdirectories. There is no built-in demo dataset, so always supply your own
 person crops.
 
@@ -164,7 +164,7 @@ The user may need to preprocess the data into the format below:
 ## Example Prompts
 
 ```text
-Run the People Attribute Search (PAS) end-to-end pipeline on a 2-person dataset at <path or s3 location>, generating attribute captions and search queries. Output to /home/ubuntu/output/.
+Run the Image Attribute Augmentation end-to-end pipeline on a 2-person dataset at <path or s3 location>, generating attribute captions and search queries. Output to /home/ubuntu/output/.
 ```
 
 ```text
@@ -206,7 +206,7 @@ This environment is useful for:
 ## Scaled-Out Testing on Your Own OSMO Cluster
 
 You can run scaled-out testing on your own OSMO cluster using the same
-`physical-ai-people-attribute-search` workflow from this environment. Ensure
+`physical-ai-image-attribute-augmentation` workflow from this environment. Ensure
 the minimum compute requirements match the resource guidance above.
 
 Use this approach when you want to validate throughput, worker scaling, and cost or performance under production-like infrastructure.
@@ -221,7 +221,7 @@ Recommended approach:
 Example prompts:
 
 ```text
-Run a scaled-out test on my OSMO cluster using the same physical-ai-people-attribute-search workflow.
+Run a scaled-out test on my OSMO cluster using the same physical-ai-image-attribute-augmentation workflow.
 ```
 
 ```text

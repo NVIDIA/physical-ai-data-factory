@@ -1,11 +1,11 @@
-# PAS Setup Guide
+# Image Attribute Augmentation Setup Guide
 
 ## Prerequisites
 
 1. **OSMO CLI**: Install and log in to OSMO. Register a DATA credential
    profile matching your `storage_url`.
 
-2. **Model Endpoints**: PAS requires three OpenAI-compatible model endpoints:
+2. **Model Endpoints**: Image Attribute Augmentation requires three OpenAI-compatible model endpoints:
 
    | Endpoint | Model | Purpose |
    |---|---|---|
@@ -57,7 +57,7 @@ docker run -d --rm --name qwen-image-edit \
 
 The `--omni` flag is required: vLLM-Omni only serves the Qwen-Image-Edit
 diffusion path (the OpenAI-compatible `/v1/chat/completions` image-edit response
-the PAS worker consumes) when launched as `vllm serve <model> --omni`.
+the Image Attribute Augmentation worker consumes) when launched as `vllm serve <model> --omni`.
 
 ### Gemma 4 VLM
 ```bash
@@ -109,5 +109,5 @@ docker run -d --rm --name llama-3-1-70b-fp8 \
 | VLM verification | Gemma 4 31B | 58.3 GB VRAM | 1x H100 |
 | Auto-labeling VLM | Gemma 4 31B | 58.3 GB VRAM | 1x H100 |
 
-GPU requirements apply to the endpoint provider, not the PAS worker pods.
+GPU requirements apply to the endpoint provider, not the Image Attribute Augmentation worker pods.
 Worker pods only need CPU and storage when using remote endpoints.

@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 #
-# PAS augmentation worker: preprocess person crops into stitched pane images,
+# Image Attribute Augmentation augmentation worker: preprocess person crops into stitched pane images,
 # generate per-sample augmentation configs from the distribution YAML, run
 # image-edit augmentation with MCQ verification, then post-process (split
 # panes back to per-view crops and build the augmented dataset JSON).

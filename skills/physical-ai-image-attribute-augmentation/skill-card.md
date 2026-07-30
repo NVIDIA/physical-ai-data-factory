@@ -1,5 +1,5 @@
 ## Description: <br>
-Use when running people attribute search (PAS) image augmentation and auto-labeling workflows on OSMO: flow selection, preflight, submit-time interpolation, monitoring, and output retrieval. <br>
+Use when running image attribute augmentation and auto-labeling workflows on OSMO: flow selection, preflight, submit-time interpolation, monitoring, and output retrieval. <br>
 
 This skill is ready for commercial/non-commercial use. <br>
 
@@ -9,7 +9,7 @@ NVIDIA <br>
 ### License/Terms of Use: <br>
 CC-BY-4.0 AND Apache-2.0 <br>
 ## Use Case: <br>
-Developers and engineers use this skill to run PAS image augmentation and auto-labeling pipelines on NVIDIA OSMO, generating controlled clothing and appearance variations and person-attribute captions for physical-AI perception models. <br>
+Developers and engineers use this skill to run Image Attribute Augmentation and auto-labeling pipelines on NVIDIA OSMO, generating controlled clothing and appearance variations and person-attribute captions for physical-AI perception models. <br>
 
 ### Deployment Geography for Use: <br>
 Global <br>

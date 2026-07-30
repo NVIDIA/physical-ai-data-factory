@@ -1,4 +1,4 @@
-# PAS default attribute distribution config (v1).
+# Image Attribute Augmentation default attribute distribution config (v1).
 # Controls which clothing/appearance attributes to augment and their sampling
 # probabilities. The config generator samples one combination per augmentation
 # index per person ID.

@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 
-# PAS preflight checks:
+# Image Attribute Augmentation preflight checks:
 #   - optional NGC key discovery/refresh for nvcr_io credential maintenance
 #   - optional outbound probes (workflow image registry access + HF)
 #   - ensures required OSMO credentials exist (hf_token always; nvcr_io when key provided)

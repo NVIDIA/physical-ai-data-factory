@@ -1,4 +1,4 @@
-# PAS Inference Endpoints
+# Image Attribute Augmentation Inference Endpoints
 
 
 ## Table of Contents
@@ -11,7 +11,7 @@
 
 ## Required Endpoints
 
-PAS workflows call three OpenAI-compatible endpoints:
+Image Attribute Augmentation workflows call three OpenAI-compatible endpoints:
 
 | Role | Default NIM service | Default URL |
 |------|-------------------|-------------|
@@ -22,9 +22,9 @@ PAS workflows call three OpenAI-compatible endpoints:
 ## Option A: Reuse Existing In-Cluster NIMs (default)
 
 VLM (`qwen3-vl`) and LLM (`qwen25-14b`) are the same services used by VDA.
-If VDA endpoints are already healthy, PAS reuses them directly.
+If VDA endpoints are already healthy, Image Attribute Augmentation reuses them directly.
 
-For Image Edit, PAS uses `Qwen/Qwen-Image-Edit-2511` (the generic upstream
+For Image Edit, Image Attribute Augmentation uses `Qwen/Qwen-Image-Edit-2511` (the generic upstream
 checkpoint) served by `vllm/vllm-omni` with `vllm serve ... --omni`. This is
 different from DIG which uses the finetuned
 `nvidia/Qwen-Image-Edit-NVPCB-OVSL2SL` variant.

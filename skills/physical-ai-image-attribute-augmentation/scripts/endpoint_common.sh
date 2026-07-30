@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Shared endpoint + worker utilities for PAS scripts.
+# Shared endpoint + worker utilities for Image Attribute Augmentation scripts.
 # Based on the VDA helpers (model-agnostic, OpenAI-compatible endpoints), plus a
-# PAS-specific /v1/health/ready fallback for Triton-based Visual GenAI NIMs that
+# Image Attribute Augmentation-specific /v1/health/ready fallback for Triton-based Visual GenAI NIMs that
 # do not expose an OpenAI /v1/models listing.
 
 make_auth_header() {

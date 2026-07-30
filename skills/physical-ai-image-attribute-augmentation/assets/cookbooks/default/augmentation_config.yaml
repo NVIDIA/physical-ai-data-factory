@@ -1,4 +1,4 @@
-# PAS augmentation pipeline config — image-edit with MCQ verification.
+# Image Attribute Augmentation augmentation pipeline config — image-edit with MCQ verification.
 # This config is passed to modules/cli.py inside the paidf-augmentation container.
 # Endpoint URLs and model names are overridden at runtime by the worker script.
 

@@ -1,7 +1,7 @@
-# PAS Default Cookbook
+# Image Attribute Augmentation Default Cookbook
 
 Default attribute distribution and augmentation pipeline configuration for the
-Person Attribute Search (PAS) image augmentation workflow.
+Image Attribute Augmentation workflow.
 
 ## Files
 

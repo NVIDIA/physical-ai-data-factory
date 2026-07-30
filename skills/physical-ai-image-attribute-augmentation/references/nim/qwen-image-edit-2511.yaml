@@ -1,4 +1,4 @@
-# Qwen Image Edit 2511 endpoint for PAS augmentation.
+# Qwen Image Edit 2511 endpoint for Image Attribute Augmentation augmentation.
 #
 # Uses NIM Operator's generic spec.command / spec.args support to run a
 # `vllm serve ... --omni` invocation for the upstream Qwen/Qwen-Image-Edit-2511
@@ -7,13 +7,13 @@
 #
 # IMPORTANT: the `--omni` flag is REQUIRED. vLLM-Omni only enables the
 # Qwen-Image-Edit diffusion serving path (and the OpenAI-compatible
-# /v1/chat/completions image-edit response the PAS worker consumes) when started
+# /v1/chat/completions image-edit response the Image Attribute Augmentation worker consumes) when started
 # as `vllm serve <model> --omni`. The plain `vllm.entrypoints.openai.api_server`
 # entrypoint without --omni does NOT serve image editing.
 #
 # Do NOT substitute the Triton-based NVIDIA NIM
 # (nvcr.io/nim/qwen/qwen-image-edit): it exposes /v1/infer and /v1/images/edits
-# but not /v1/chat/completions, so the PAS worker's chat.completions calls 404.
+# but not /v1/chat/completions, so the Image Attribute Augmentation worker's chat.completions calls 404.
 #
 # NIM Operator mounts spec.storage.pvc at /model-store in the container and
 # auto-sets NIM_CACHE_PATH=/model-store. We point HF_HOME at a subdir so model
