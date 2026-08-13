@@ -306,3 +306,4 @@ Use these canonical locations:
 - Setup and triage: `references/setup.md`, `references/troubleshooting.md`
 - Images: `references/container-images.md`
 - Cookbook tuning: `assets/cookbooks/default/README.md`
+
