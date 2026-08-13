@@ -9,8 +9,8 @@ Recommended for publication based on the completed evaluation evidence in this r
 ## Evaluation Metadata
 
 - Skill: `physical-ai-image-attribute-augmentation`
-- Evaluation date: 2026-08-01
-- Evaluator version: `0.9.2`
+- Evaluation date: 2026-08-13
+- Evaluator version: `1.2.4`
 - Agents: Claude Code (`aws/anthropic/bedrock-claude-opus-4-8`), Codex (`openai/openai/gpt-5.5`)
 - Tasks: 10 evaluation tasks (7 positive, 3 negative)
 - Dataset digest: `sha256:08e695fc0c489146e8cb39e6b651ee5592a6da00f5f2ee28611bac05d927f532` (skill-evaluator-dataset-snapshot/1)
@@ -34,12 +34,12 @@ The three-tier evaluation checks whether the skill:
 
 | Measure | Claude Code (Baseline → Skill Uplift) | Codex (Baseline → Skill Uplift) |
 |---|---:|---:|
-| Overall | 53% → 86% (+33 points) | 52% → 83% (+31 points) |
-| Security | 90% → 95% (+5 points) | 65% → 95% (+30 points) |
-| Correctness | 30% → 90% (+60 points) | 54% → 74% (+20 points) |
-| Discoverability | 57% → 88% (+30 points) | 52% → 82% (+30 points) |
-| Effectiveness | 41% → 74% (+33 points) | 41% → 81% (+41 points) |
-| Efficiency | 48% → 85% (+37 points) | 48% → 84% (+35 points) |
+| Overall | 49% → 88% (+38 points) | 55% → 85% (+30 points) |
+| Security | 70% → 100% (+30 points) | 60% → 90% (+30 points) |
+| Correctness | 26% → 92% (+66 points) | 58% → 80% (+22 points) |
+| Discoverability | 57% → 88% (+31 points) | 52% → 83% (+31 points) |
+| Effectiveness | 45% → 72% (+26 points) | 54% → 88% (+35 points) |
+| Efficiency | 48% → 86% (+38 points) | 51% → 85% (+33 points) |
 
 **How to read this table:** baseline is the same task attempted without the target skill. Uplift is `skill score - baseline score`, shown in percentage points.
 

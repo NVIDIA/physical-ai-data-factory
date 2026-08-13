@@ -9,7 +9,7 @@ NVIDIA <br>
 ### License/Terms of Use: <br>
 CC-BY-4.0 AND Apache-2.0 <br>
 ## Use Case: <br>
-Developers and engineers use this skill to run end-to-end image attribute augmentation and auto-labeling pipelines on NVIDIA OSMO, generating controlled appearance variations and subject-attribute captions for physical-AI perception model training. The subject is a person today, but the pipeline generalizes to other subjects such as robots, forklifts, or vehicles in simulation. <br>
+Developers and engineers running image attribute augmentation and auto-labeling pipelines on NVIDIA OSMO to generate controlled appearance variations and attribute captions for person-crop datasets. <br>
 
 ### Deployment Geography for Use: <br>
 Global <br>
@@ -25,14 +25,14 @@ Risk: Review before execution as proposals could introduce incorrect or misleadi
 Mitigation: Review and scan skill before deployment. <br>
 
 ## Reference(s): <br>
-- [NVIDIA OSMO](https://developer.nvidia.com/osmo) <br>
+- [Container Images](references/container-images.md) <br>
 - [Augmentation Flow](references/flows/augmentation.md) <br>
-- [Auto-Labeling Flow](references/flows/auto_labeling.md) <br>
+- [Auto Labeling Flow](references/flows/auto_labeling.md) <br>
 - [End-to-End Flow](references/flows/e2e.md) <br>
+- [NIM Deployment](references/nim/README.md) <br>
 - [Setup Guide](references/setup.md) <br>
 - [Troubleshooting](references/troubleshooting.md) <br>
-- [NIM Configuration](references/nim/README.md) <br>
-- [Container Images](references/container-images.md) <br>
+- [NVIDIA OSMO](https://developer.nvidia.com/osmo) <br>
 
 
 ## Skill Output: <br>
@@ -48,35 +48,35 @@ Mitigation: Review and scan skill before deployment. <br>
 
 
 ## Evaluation Tasks: <br>
-Evaluated against 10 tasks (7 positive, 3 negative) in isolated k8s-sandbox pods. <br>
+10 evaluation tasks (7 positive, 3 negative) executed in isolated sandbox pods. <br>
 
 ## Evaluation Metrics Used: <br>
 Reported benchmark dimensions: <br>
-- Security: Whether the skill avoids unsafe operations, secret leakage, and unauthorized access. <br>
-- Correctness: Whether the final answer is correct against the reference answer. <br>
-- Discoverability: Whether the expected skill was found and executed when needed. <br>
-- Effectiveness: Whether the skill helps the agent complete the user's goal and follow expected workflow behavior. <br>
-- Efficiency: Whether the skill avoids wasted tool or skill usage through routing quality and productive tool use. <br>
+- Security: Checks for unsafe operations, secret leakage, and unauthorized access. <br>
+- Correctness: Checks final-answer correctness against the reference answer. <br>
+- Discoverability: Checks whether the expected skill was found and executed when needed. <br>
+- Effectiveness: Checks whether the skill helped complete the user's goal and followed expected workflow behavior. <br>
+- Efficiency: Checks routing quality, workspace-aware skill reads, and productive tool use. <br>
 
 Underlying evaluation signals used in this run: <br>
-- `security`: Checks for unsafe operations, secret leakage, and unauthorized access. <br>
-- `skill_execution`: Verifies the expected skill was found and executed. <br>
-- `skill_efficiency`: Evaluates routing quality, workspace-aware skill reads, and productive tool use. <br>
-- `accuracy`: Measures final-answer correctness against the reference answer. <br>
-- `goal_accuracy`: Assesses whether the user's goal was achieved. <br>
-- `behavior_check`: Verifies the expected workflow behavior was followed. <br>
+- `security`: Unsafe operations, secret leakage, and unauthorized access. <br>
+- `skill_execution`: Whether the expected skill was found and executed. <br>
+- `skill_efficiency`: Routing quality, workspace-aware skill reads, and productive tool use. <br>
+- `accuracy`: Final-answer correctness against the reference answer. <br>
+- `goal_accuracy`: Whether the user's goal was achieved. <br>
+- `behavior_check`: Whether the expected workflow behavior was followed. <br>
 
 
 
 ## Evaluation Results: <br>
 | Measure | Claude Code (Baseline → Skill Uplift) | Codex (Baseline → Skill Uplift) |
 |---|---:|---:|
-| Overall | 53% → 86% (+33 points) | 52% → 83% (+31 points) |
-| Security | 90% → 95% (+5 points) | 65% → 95% (+30 points) |
-| Correctness | 30% → 90% (+60 points) | 54% → 74% (+20 points) |
-| Discoverability | 57% → 88% (+30 points) | 52% → 82% (+30 points) |
-| Effectiveness | 41% → 74% (+33 points) | 41% → 81% (+41 points) |
-| Efficiency | 48% → 85% (+37 points) | 48% → 84% (+35 points) |
+| Overall | 49% → 88% (+38 points) | 55% → 85% (+30 points) |
+| Security | 70% → 100% (+30 points) | 60% → 90% (+30 points) |
+| Correctness | 26% → 92% (+66 points) | 58% → 80% (+22 points) |
+| Discoverability | 57% → 88% (+31 points) | 52% → 83% (+31 points) |
+| Effectiveness | 45% → 72% (+26 points) | 54% → 88% (+35 points) |
+| Efficiency | 48% → 86% (+38 points) | 51% → 85% (+33 points) |
 
 ## Skill Version(s): <br>
 1.0.0 (source: frontmatter) <br>
