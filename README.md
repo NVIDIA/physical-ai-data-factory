@@ -36,9 +36,7 @@ PAIDF workflows compose reusable core modules into end-to-end data operations.
 | **Augmentation** | Generative-AI data augmentation for video, image, and text, using backends such as Cosmos Transfer, Cosmos Predict, and image-edit models. | [NVIDIA/paidf-augmentation](https://github.com/NVIDIA/paidf-augmentation) |
 | **AnomalyGen** | Few-shot, diffusion-based generation of photorealistic, mask-aligned anomaly images for industrial visual inspection. | [NVIDIA/paidf-anomalygen](https://github.com/NVIDIA/paidf-anomalygen) |
 | **Simulation** | Isaac Sim and Omniverse Replicator pipelines for generating photorealistic, fully labeled inspection imagery. | [NVIDIA/paidf-simulation](https://github.com/NVIDIA/paidf-simulation) |
-
-PAIDF Curation & Retrieval will be added to the ecosystem when its public
-repository is available.
+| **Curation and Retrieval** | Cosmos Curator, NVIDIA TAO Data services pipelines for curating and retrieving image and video datasets. | [NVIDIA/paidf-curation-and-retrieval](https://github.com/NVIDIA/paidf-curation-and-retrieval) |
 
 ## Repository layout
 
